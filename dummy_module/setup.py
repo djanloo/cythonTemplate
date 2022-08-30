@@ -1,10 +1,4 @@
 from setuptools import Extension, setup
-from Cython.Build import cythonize
-
-
-# setup(
-#     ext_modules=cythonize("dummy_module/*.pyx"), #, annotate=True),
-# )
 
 from distutils.core import setup
 from distutils.extension import Extension
