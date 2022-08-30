@@ -1,4 +1,5 @@
 # import pyximport; pyximport.install()
+from dummy_pkg import setup
 from dummy_pkg import dummy_core, vanilla
 from time import perf_counter
 from rich import print
