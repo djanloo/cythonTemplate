@@ -1314,7 +1314,7 @@ static PyObject *__pyx_tuple__3;
 static PyObject *__pyx_codeobj__4;
 /* Late includes */
 
-/* "dummy_core.pyx":11
+/* "dummy_core.pyx":9
  * 
  * # Just python: uses def
  * def primes(range_from: int, range_til: int):             # <<<<<<<<<<<<<<
@@ -1358,11 +1358,11 @@ static PyObject *__pyx_pw_10dummy_core_1primes(PyObject *__pyx_self, PyObject *_
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_range_til)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("primes", 1, 2, 2, 1); __PYX_ERR(0, 11, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("primes", 1, 2, 2, 1); __PYX_ERR(0, 9, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "primes") < 0)) __PYX_ERR(0, 11, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "primes") < 0)) __PYX_ERR(0, 9, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -1375,7 +1375,7 @@ static PyObject *__pyx_pw_10dummy_core_1primes(PyObject *__pyx_self, PyObject *_
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("primes", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 11, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("primes", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 9, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("dummy_core.primes", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -1409,7 +1409,7 @@ static PyObject *__pyx_pf_10dummy_core_primes(CYTHON_UNUSED PyObject *__pyx_self
   __Pyx_RefNannySetupContext("primes", 0);
   __Pyx_INCREF(__pyx_v_range_from);
 
-  /* "dummy_core.pyx":13
+  /* "dummy_core.pyx":11
  * def primes(range_from: int, range_til: int):
  *   """ Returns the number of found prime numbers using range"""
  *   prime_count = 0             # <<<<<<<<<<<<<<
@@ -1419,15 +1419,15 @@ static PyObject *__pyx_pf_10dummy_core_primes(CYTHON_UNUSED PyObject *__pyx_self
   __Pyx_INCREF(__pyx_int_0);
   __pyx_v_prime_count = __pyx_int_0;
 
-  /* "dummy_core.pyx":14
+  /* "dummy_core.pyx":12
  *   """ Returns the number of found prime numbers using range"""
  *   prime_count = 0
  *   range_from = range_from if range_from >= 2 else 2             # <<<<<<<<<<<<<<
  *   for num in range(range_from, range_til + 1):
  *     for divnum in range(2, num):
  */
-  __pyx_t_2 = PyObject_RichCompare(__pyx_v_range_from, __pyx_int_2, Py_GE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 14, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(__pyx_v_range_from, __pyx_int_2, Py_GE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_3) {
     __Pyx_INCREF(__pyx_v_range_from);
@@ -1439,16 +1439,16 @@ static PyObject *__pyx_pf_10dummy_core_primes(CYTHON_UNUSED PyObject *__pyx_self
   __Pyx_DECREF_SET(__pyx_v_range_from, __pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "dummy_core.pyx":15
+  /* "dummy_core.pyx":13
  *   prime_count = 0
  *   range_from = range_from if range_from >= 2 else 2
  *   for num in range(range_from, range_til + 1):             # <<<<<<<<<<<<<<
  *     for divnum in range(2, num):
  *       if ((num % divnum) == 0):
  */
-  __pyx_t_1 = __Pyx_PyInt_AddObjC(__pyx_v_range_til, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_AddObjC(__pyx_v_range_til, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 15, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 13, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_v_range_from);
   __Pyx_GIVEREF(__pyx_v_range_from);
@@ -1456,16 +1456,16 @@ static PyObject *__pyx_pf_10dummy_core_primes(CYTHON_UNUSED PyObject *__pyx_self
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
     __pyx_t_2 = __pyx_t_1; __Pyx_INCREF(__pyx_t_2); __pyx_t_4 = 0;
     __pyx_t_5 = NULL;
   } else {
-    __pyx_t_4 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 15, __pyx_L1_error)
+    __pyx_t_4 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 13, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_5 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 15, __pyx_L1_error)
+    __pyx_t_5 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 13, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   for (;;) {
@@ -1473,17 +1473,17 @@ static PyObject *__pyx_pf_10dummy_core_primes(CYTHON_UNUSED PyObject *__pyx_self
       if (likely(PyList_CheckExact(__pyx_t_2))) {
         if (__pyx_t_4 >= PyList_GET_SIZE(__pyx_t_2)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(0, 15, __pyx_L1_error)
+        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(0, 13, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       } else {
         if (__pyx_t_4 >= PyTuple_GET_SIZE(__pyx_t_2)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(0, 15, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(0, 13, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       }
@@ -1493,7 +1493,7 @@ static PyObject *__pyx_pf_10dummy_core_primes(CYTHON_UNUSED PyObject *__pyx_self
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 15, __pyx_L1_error)
+          else __PYX_ERR(0, 13, __pyx_L1_error)
         }
         break;
       }
@@ -1502,14 +1502,14 @@ static PyObject *__pyx_pf_10dummy_core_primes(CYTHON_UNUSED PyObject *__pyx_self
     __Pyx_XDECREF_SET(__pyx_v_num, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "dummy_core.pyx":16
+    /* "dummy_core.pyx":14
  *   range_from = range_from if range_from >= 2 else 2
  *   for num in range(range_from, range_til + 1):
  *     for divnum in range(2, num):             # <<<<<<<<<<<<<<
  *       if ((num % divnum) == 0):
  *         break
  */
-    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 16, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 14, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_INCREF(__pyx_int_2);
     __Pyx_GIVEREF(__pyx_int_2);
@@ -1517,16 +1517,16 @@ static PyObject *__pyx_pf_10dummy_core_primes(CYTHON_UNUSED PyObject *__pyx_self
     __Pyx_INCREF(__pyx_v_num);
     __Pyx_GIVEREF(__pyx_v_num);
     PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_num);
-    __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_1, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 16, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_1, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 14, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (likely(PyList_CheckExact(__pyx_t_6)) || PyTuple_CheckExact(__pyx_t_6)) {
       __pyx_t_1 = __pyx_t_6; __Pyx_INCREF(__pyx_t_1); __pyx_t_7 = 0;
       __pyx_t_8 = NULL;
     } else {
-      __pyx_t_7 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 16, __pyx_L1_error)
+      __pyx_t_7 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 14, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_8 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 16, __pyx_L1_error)
+      __pyx_t_8 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 14, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     for (;;) {
@@ -1534,17 +1534,17 @@ static PyObject *__pyx_pf_10dummy_core_primes(CYTHON_UNUSED PyObject *__pyx_self
         if (likely(PyList_CheckExact(__pyx_t_1))) {
           if (__pyx_t_7 >= PyList_GET_SIZE(__pyx_t_1)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_6 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_7); __Pyx_INCREF(__pyx_t_6); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 16, __pyx_L1_error)
+          __pyx_t_6 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_7); __Pyx_INCREF(__pyx_t_6); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 14, __pyx_L1_error)
           #else
-          __pyx_t_6 = PySequence_ITEM(__pyx_t_1, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 16, __pyx_L1_error)
+          __pyx_t_6 = PySequence_ITEM(__pyx_t_1, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 14, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_6);
           #endif
         } else {
           if (__pyx_t_7 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_6 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_7); __Pyx_INCREF(__pyx_t_6); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 16, __pyx_L1_error)
+          __pyx_t_6 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_7); __Pyx_INCREF(__pyx_t_6); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(0, 14, __pyx_L1_error)
           #else
-          __pyx_t_6 = PySequence_ITEM(__pyx_t_1, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 16, __pyx_L1_error)
+          __pyx_t_6 = PySequence_ITEM(__pyx_t_1, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 14, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_6);
           #endif
         }
@@ -1554,7 +1554,7 @@ static PyObject *__pyx_pf_10dummy_core_primes(CYTHON_UNUSED PyObject *__pyx_self
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 16, __pyx_L1_error)
+            else __PYX_ERR(0, 14, __pyx_L1_error)
           }
           break;
         }
@@ -1563,23 +1563,23 @@ static PyObject *__pyx_pf_10dummy_core_primes(CYTHON_UNUSED PyObject *__pyx_self
       __Pyx_XDECREF_SET(__pyx_v_divnum, __pyx_t_6);
       __pyx_t_6 = 0;
 
-      /* "dummy_core.pyx":17
+      /* "dummy_core.pyx":15
  *   for num in range(range_from, range_til + 1):
  *     for divnum in range(2, num):
  *       if ((num % divnum) == 0):             # <<<<<<<<<<<<<<
  *         break
  *     else:
  */
-      __pyx_t_6 = PyNumber_Remainder(__pyx_v_num, __pyx_v_divnum); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 17, __pyx_L1_error)
+      __pyx_t_6 = PyNumber_Remainder(__pyx_v_num, __pyx_v_divnum); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 15, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_9 = __Pyx_PyInt_EqObjC(__pyx_t_6, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 17, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_PyInt_EqObjC(__pyx_t_6, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 15, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_9); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 17, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_9); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 15, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       if (__pyx_t_3) {
 
-        /* "dummy_core.pyx":18
+        /* "dummy_core.pyx":16
  *     for divnum in range(2, num):
  *       if ((num % divnum) == 0):
  *         break             # <<<<<<<<<<<<<<
@@ -1588,7 +1588,7 @@ static PyObject *__pyx_pf_10dummy_core_primes(CYTHON_UNUSED PyObject *__pyx_self
  */
         goto __pyx_L6_break;
 
-        /* "dummy_core.pyx":17
+        /* "dummy_core.pyx":15
  *   for num in range(range_from, range_til + 1):
  *     for divnum in range(2, num):
  *       if ((num % divnum) == 0):             # <<<<<<<<<<<<<<
@@ -1597,7 +1597,7 @@ static PyObject *__pyx_pf_10dummy_core_primes(CYTHON_UNUSED PyObject *__pyx_self
  */
       }
 
-      /* "dummy_core.pyx":16
+      /* "dummy_core.pyx":14
  *   range_from = range_from if range_from >= 2 else 2
  *   for num in range(range_from, range_til + 1):
  *     for divnum in range(2, num):             # <<<<<<<<<<<<<<
@@ -1607,20 +1607,20 @@ static PyObject *__pyx_pf_10dummy_core_primes(CYTHON_UNUSED PyObject *__pyx_self
     }
     /*else*/ {
 
-      /* "dummy_core.pyx":20
+      /* "dummy_core.pyx":18
  *         break
  *     else:
  *       prime_count += 1             # <<<<<<<<<<<<<<
  *   return prime_count
  * 
  */
-      __pyx_t_9 = __Pyx_PyInt_AddObjC(__pyx_v_prime_count, __pyx_int_1, 1, 1, 0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 20, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_PyInt_AddObjC(__pyx_v_prime_count, __pyx_int_1, 1, 1, 0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 18, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF_SET(__pyx_v_prime_count, __pyx_t_9);
       __pyx_t_9 = 0;
     }
 
-    /* "dummy_core.pyx":16
+    /* "dummy_core.pyx":14
  *   range_from = range_from if range_from >= 2 else 2
  *   for num in range(range_from, range_til + 1):
  *     for divnum in range(2, num):             # <<<<<<<<<<<<<<
@@ -1630,7 +1630,7 @@ static PyObject *__pyx_pf_10dummy_core_primes(CYTHON_UNUSED PyObject *__pyx_self
     __pyx_L6_break:;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "dummy_core.pyx":15
+    /* "dummy_core.pyx":13
  *   prime_count = 0
  *   range_from = range_from if range_from >= 2 else 2
  *   for num in range(range_from, range_til + 1):             # <<<<<<<<<<<<<<
@@ -1640,7 +1640,7 @@ static PyObject *__pyx_pf_10dummy_core_primes(CYTHON_UNUSED PyObject *__pyx_self
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "dummy_core.pyx":21
+  /* "dummy_core.pyx":19
  *     else:
  *       prime_count += 1
  *   return prime_count             # <<<<<<<<<<<<<<
@@ -1652,7 +1652,7 @@ static PyObject *__pyx_pf_10dummy_core_primes(CYTHON_UNUSED PyObject *__pyx_self
   __pyx_r = __pyx_v_prime_count;
   goto __pyx_L0;
 
-  /* "dummy_core.pyx":11
+  /* "dummy_core.pyx":9
  * 
  * # Just python: uses def
  * def primes(range_from: int, range_til: int):             # <<<<<<<<<<<<<<
@@ -1678,7 +1678,7 @@ static PyObject *__pyx_pf_10dummy_core_primes(CYTHON_UNUSED PyObject *__pyx_self
   return __pyx_r;
 }
 
-/* "dummy_core.pyx":24
+/* "dummy_core.pyx":22
  * 
  * # This will be compiled in c and wrapped in python: uses cpdef
  * cpdef primes_cy(int range_from, int range_til):             # <<<<<<<<<<<<<<
@@ -1706,7 +1706,7 @@ static PyObject *__pyx_f_10dummy_core_primes_cy(int __pyx_v_range_from, int __py
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("primes_cy", 0);
 
-  /* "dummy_core.pyx":26
+  /* "dummy_core.pyx":24
  * cpdef primes_cy(int range_from, int range_til):
  *   """ Returns the number of found prime numbers using range"""
  *   cdef int prime_count = 0             # <<<<<<<<<<<<<<
@@ -1715,7 +1715,7 @@ static PyObject *__pyx_f_10dummy_core_primes_cy(int __pyx_v_range_from, int __py
  */
   __pyx_v_prime_count = 0;
 
-  /* "dummy_core.pyx":29
+  /* "dummy_core.pyx":27
  *   cdef int num
  *   cdef int divnum
  *   range_from = range_from if range_from >= 2 else 2             # <<<<<<<<<<<<<<
@@ -1729,7 +1729,7 @@ static PyObject *__pyx_f_10dummy_core_primes_cy(int __pyx_v_range_from, int __py
   }
   __pyx_v_range_from = __pyx_t_1;
 
-  /* "dummy_core.pyx":30
+  /* "dummy_core.pyx":28
  *   cdef int divnum
  *   range_from = range_from if range_from >= 2 else 2
  *   for num in range(range_from, range_til + 1):             # <<<<<<<<<<<<<<
@@ -1741,7 +1741,7 @@ static PyObject *__pyx_f_10dummy_core_primes_cy(int __pyx_v_range_from, int __py
   for (__pyx_t_1 = __pyx_v_range_from; __pyx_t_1 < __pyx_t_3; __pyx_t_1+=1) {
     __pyx_v_num = __pyx_t_1;
 
-    /* "dummy_core.pyx":31
+    /* "dummy_core.pyx":29
  *   range_from = range_from if range_from >= 2 else 2
  *   for num in range(range_from, range_til + 1):
  *     for divnum in range(2, num):             # <<<<<<<<<<<<<<
@@ -1753,7 +1753,7 @@ static PyObject *__pyx_f_10dummy_core_primes_cy(int __pyx_v_range_from, int __py
     for (__pyx_t_6 = 2; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
       __pyx_v_divnum = __pyx_t_6;
 
-      /* "dummy_core.pyx":32
+      /* "dummy_core.pyx":30
  *   for num in range(range_from, range_til + 1):
  *     for divnum in range(2, num):
  *       if ((num % divnum) == 0):             # <<<<<<<<<<<<<<
@@ -1762,12 +1762,12 @@ static PyObject *__pyx_f_10dummy_core_primes_cy(int __pyx_v_range_from, int __py
  */
       if (unlikely(__pyx_v_divnum == 0)) {
         PyErr_SetString(PyExc_ZeroDivisionError, "integer division or modulo by zero");
-        __PYX_ERR(0, 32, __pyx_L1_error)
+        __PYX_ERR(0, 30, __pyx_L1_error)
       }
       __pyx_t_7 = ((__Pyx_mod_int(__pyx_v_num, __pyx_v_divnum) == 0) != 0);
       if (__pyx_t_7) {
 
-        /* "dummy_core.pyx":33
+        /* "dummy_core.pyx":31
  *     for divnum in range(2, num):
  *       if ((num % divnum) == 0):
  *         break             # <<<<<<<<<<<<<<
@@ -1776,7 +1776,7 @@ static PyObject *__pyx_f_10dummy_core_primes_cy(int __pyx_v_range_from, int __py
  */
         goto __pyx_L6_break;
 
-        /* "dummy_core.pyx":32
+        /* "dummy_core.pyx":30
  *   for num in range(range_from, range_til + 1):
  *     for divnum in range(2, num):
  *       if ((num % divnum) == 0):             # <<<<<<<<<<<<<<
@@ -1787,7 +1787,7 @@ static PyObject *__pyx_f_10dummy_core_primes_cy(int __pyx_v_range_from, int __py
     }
     /*else*/ {
 
-      /* "dummy_core.pyx":35
+      /* "dummy_core.pyx":33
  *         break
  *     else:
  *       prime_count += 1             # <<<<<<<<<<<<<<
@@ -1799,7 +1799,7 @@ static PyObject *__pyx_f_10dummy_core_primes_cy(int __pyx_v_range_from, int __py
     __pyx_L6_break:;
   }
 
-  /* "dummy_core.pyx":36
+  /* "dummy_core.pyx":34
  *     else:
  *       prime_count += 1
  *   return prime_count             # <<<<<<<<<<<<<<
@@ -1807,13 +1807,13 @@ static PyObject *__pyx_f_10dummy_core_primes_cy(int __pyx_v_range_from, int __py
  * # this is just c: it can't be seen from outside
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_prime_count); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_prime_count); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __pyx_r = __pyx_t_8;
   __pyx_t_8 = 0;
   goto __pyx_L0;
 
-  /* "dummy_core.pyx":24
+  /* "dummy_core.pyx":22
  * 
  * # This will be compiled in c and wrapped in python: uses cpdef
  * cpdef primes_cy(int range_from, int range_til):             # <<<<<<<<<<<<<<
@@ -1867,11 +1867,11 @@ static PyObject *__pyx_pw_10dummy_core_3primes_cy(PyObject *__pyx_self, PyObject
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_range_til)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("primes_cy", 1, 2, 2, 1); __PYX_ERR(0, 24, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("primes_cy", 1, 2, 2, 1); __PYX_ERR(0, 22, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "primes_cy") < 0)) __PYX_ERR(0, 24, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "primes_cy") < 0)) __PYX_ERR(0, 22, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -1879,12 +1879,12 @@ static PyObject *__pyx_pw_10dummy_core_3primes_cy(PyObject *__pyx_self, PyObject
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_range_from = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_range_from == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 24, __pyx_L3_error)
-    __pyx_v_range_til = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_range_til == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 24, __pyx_L3_error)
+    __pyx_v_range_from = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_range_from == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 22, __pyx_L3_error)
+    __pyx_v_range_til = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_range_til == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 22, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("primes_cy", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 24, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("primes_cy", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 22, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("dummy_core.primes_cy", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -1906,7 +1906,7 @@ static PyObject *__pyx_pf_10dummy_core_2primes_cy(CYTHON_UNUSED PyObject *__pyx_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("primes_cy", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_10dummy_core_primes_cy(__pyx_v_range_from, __pyx_v_range_til, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 24, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_10dummy_core_primes_cy(__pyx_v_range_from, __pyx_v_range_til, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1923,7 +1923,7 @@ static PyObject *__pyx_pf_10dummy_core_2primes_cy(CYTHON_UNUSED PyObject *__pyx_
   return __pyx_r;
 }
 
-/* "dummy_core.pyx":39
+/* "dummy_core.pyx":37
  * 
  * # this is just c: it can't be seen from outside
  * cdef does_nothing():             # <<<<<<<<<<<<<<
@@ -2011,7 +2011,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 15, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 13, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -2026,23 +2026,23 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * dummy_utils.urushibara_ruka(1)             # <<<<<<<<<<<<<<
  * vanilla.hey()
- * dummy_utils.urushibara_ruka(1)
+ * 
  */
   __pyx_tuple__2 = PyTuple_Pack(1, __pyx_int_1); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "dummy_core.pyx":11
+  /* "dummy_core.pyx":9
  * 
  * # Just python: uses def
  * def primes(range_from: int, range_til: int):             # <<<<<<<<<<<<<<
  *   """ Returns the number of found prime numbers using range"""
  *   prime_count = 0
  */
-  __pyx_tuple__3 = PyTuple_Pack(5, __pyx_n_s_range_from, __pyx_n_s_range_til, __pyx_n_s_prime_count, __pyx_n_s_num, __pyx_n_s_divnum); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 11, __pyx_L1_error)
+  __pyx_tuple__3 = PyTuple_Pack(5, __pyx_n_s_range_from, __pyx_n_s_range_til, __pyx_n_s_prime_count, __pyx_n_s_num, __pyx_n_s_divnum); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
-  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(2, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dummy_core_pyx, __pyx_n_s_primes, 11, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 11, __pyx_L1_error)
+  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(2, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dummy_core_pyx, __pyx_n_s_primes, 9, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -2358,7 +2358,7 @@ if (!__Pyx_RefNanny) {
  * 
  * dummy_utils.urushibara_ruka(1)             # <<<<<<<<<<<<<<
  * vanilla.hey()
- * dummy_utils.urushibara_ruka(1)
+ * 
  */
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_dummy_utils); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -2374,8 +2374,8 @@ if (!__Pyx_RefNanny) {
  * 
  * dummy_utils.urushibara_ruka(1)
  * vanilla.hey()             # <<<<<<<<<<<<<<
- * dummy_utils.urushibara_ruka(1)
  * 
+ * # Just python: uses def
  */
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_vanilla); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -2387,33 +2387,16 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "dummy_core.pyx":7
- * dummy_utils.urushibara_ruka(1)
- * vanilla.hey()
- * dummy_utils.urushibara_ruka(1)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_dummy_utils); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 7, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_urushibara_ruka); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 7, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 7, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "dummy_core.pyx":11
+  /* "dummy_core.pyx":9
  * 
  * # Just python: uses def
  * def primes(range_from: int, range_til: int):             # <<<<<<<<<<<<<<
  *   """ Returns the number of found prime numbers using range"""
  *   prime_count = 0
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_10dummy_core_1primes, NULL, __pyx_n_s_dummy_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 11, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_10dummy_core_1primes, NULL, __pyx_n_s_dummy_core); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_primes, __pyx_t_2) < 0) __PYX_ERR(0, 11, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_primes, __pyx_t_2) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "dummy_core.pyx":1

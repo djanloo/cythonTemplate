@@ -6,15 +6,20 @@ from rich import print
 vanilla.hey()
 
 class PerfContext:
+    """Dummy performance context"""
 
     def __init__(self, name):
         self.name = name
+        self.perfdict = {}
+        self.resdict = {}
 
     def watch(self, func, name="timer", args=None):
+
         watch_start = perf_counter()
         result = func(*args)
         watch_end = perf_counter()
-        print(f"[green]{name}[/green] --> {watch_end - watch_start} (result: {result})")
+        self.perfdict[name] = watch_end - watch_start
+        self.resdict[name] = result
 
     def __enter__(self):
         self.enter_time = perf_counter()
@@ -22,6 +27,19 @@ class PerfContext:
     
     def __exit__(self, *args):
         self.exit_time = perf_counter()
+
+        colors = {}
+        for name in self.perfdict:
+            colors[name] = "blue"
+
+        colors[min(self.perfdict.items())[0]] = "green"
+        colors[max(self.perfdict.items())[0]] = "red"
+
+        print(colors)
+
+        for name in self.perfdict:
+            print(f"[{colors[name]}]{name}[/{colors[name]}] --> {self.perfdict[name]} (result: {self.resdict[name]})")
+
         print(f"Context {self.name} --> {self.exit_time - self.enter_time}")
 
 N = 5_000

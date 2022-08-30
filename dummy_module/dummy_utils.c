@@ -1231,7 +1231,7 @@ static const char __pyx_k_print[] = "print";
 static const char __pyx_k_range[] = "range";
 static const char __pyx_k_Daga_otoko_da[] = "Daga.. otoko da";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
-static const char __pyx_k_A_dummy_utils_module[] = "A dummy utils module";
+static const char __pyx_k_A_dummy_utils_module_Used_to_che[] = "A dummy utils module.\n\nUsed to check if pyx-pyx imports are done correctly.\nRemember that cdef makes stuff invisible outside module.";
 static PyObject *__pyx_kp_s_Daga_otoko_da;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_n_s_end;
@@ -1244,8 +1244,8 @@ static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_pf_11dummy_utils_urushibara_ruka(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_n); /* proto */
 /* Late includes */
 
-/* "dummy_utils.pyx":3
- * """A dummy utils module"""
+/* "dummy_utils.pyx":6
+ * Remember that cdef makes stuff invisible outside module."""
  * 
  * cpdef urushibara_ruka(n):             # <<<<<<<<<<<<<<
  *     for _ in range(n):
@@ -1266,21 +1266,21 @@ static PyObject *__pyx_f_11dummy_utils_urushibara_ruka(PyObject *__pyx_v_n, CYTH
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("urushibara_ruka", 0);
 
-  /* "dummy_utils.pyx":4
+  /* "dummy_utils.pyx":7
  * 
  * cpdef urushibara_ruka(n):
  *     for _ in range(n):             # <<<<<<<<<<<<<<
  *         print("Daga.. otoko da")
  */
-  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_v_n); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_v_n); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
     __pyx_t_2 = __pyx_t_1; __Pyx_INCREF(__pyx_t_2); __pyx_t_3 = 0;
     __pyx_t_4 = NULL;
   } else {
-    __pyx_t_3 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 4, __pyx_L1_error)
+    __pyx_t_3 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 7, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_4 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 4, __pyx_L1_error)
+    __pyx_t_4 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 7, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   for (;;) {
@@ -1288,17 +1288,17 @@ static PyObject *__pyx_f_11dummy_utils_urushibara_ruka(PyObject *__pyx_v_n, CYTH
       if (likely(PyList_CheckExact(__pyx_t_2))) {
         if (__pyx_t_3 >= PyList_GET_SIZE(__pyx_t_2)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_3); __Pyx_INCREF(__pyx_t_1); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 4, __pyx_L1_error)
+        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_3); __Pyx_INCREF(__pyx_t_1); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 7, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 4, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 7, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       } else {
         if (__pyx_t_3 >= PyTuple_GET_SIZE(__pyx_t_2)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_3); __Pyx_INCREF(__pyx_t_1); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 4, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_3); __Pyx_INCREF(__pyx_t_1); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 7, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 4, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 7, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       }
@@ -1308,7 +1308,7 @@ static PyObject *__pyx_f_11dummy_utils_urushibara_ruka(PyObject *__pyx_v_n, CYTH
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 4, __pyx_L1_error)
+          else __PYX_ERR(0, 7, __pyx_L1_error)
         }
         break;
       }
@@ -1317,14 +1317,14 @@ static PyObject *__pyx_f_11dummy_utils_urushibara_ruka(PyObject *__pyx_v_n, CYTH
     __Pyx_XDECREF_SET(__pyx_v__, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "dummy_utils.pyx":5
+    /* "dummy_utils.pyx":8
  * cpdef urushibara_ruka(n):
  *     for _ in range(n):
  *         print("Daga.. otoko da")             # <<<<<<<<<<<<<<
  */
-    if (__Pyx_PrintOne(0, __pyx_kp_s_Daga_otoko_da) < 0) __PYX_ERR(0, 5, __pyx_L1_error)
+    if (__Pyx_PrintOne(0, __pyx_kp_s_Daga_otoko_da) < 0) __PYX_ERR(0, 8, __pyx_L1_error)
 
-    /* "dummy_utils.pyx":4
+    /* "dummy_utils.pyx":7
  * 
  * cpdef urushibara_ruka(n):
  *     for _ in range(n):             # <<<<<<<<<<<<<<
@@ -1333,8 +1333,8 @@ static PyObject *__pyx_f_11dummy_utils_urushibara_ruka(PyObject *__pyx_v_n, CYTH
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "dummy_utils.pyx":3
- * """A dummy utils module"""
+  /* "dummy_utils.pyx":6
+ * Remember that cdef makes stuff invisible outside module."""
  * 
  * cpdef urushibara_ruka(n):             # <<<<<<<<<<<<<<
  *     for _ in range(n):
@@ -1378,7 +1378,7 @@ static PyObject *__pyx_pf_11dummy_utils_urushibara_ruka(CYTHON_UNUSED PyObject *
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("urushibara_ruka", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_11dummy_utils_urushibara_ruka(__pyx_v_n, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_11dummy_utils_urushibara_ruka(__pyx_v_n, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1414,7 +1414,7 @@ static PyModuleDef_Slot __pyx_moduledef_slots[] = {
 static struct PyModuleDef __pyx_moduledef = {
     PyModuleDef_HEAD_INIT,
     "dummy_utils",
-    __pyx_k_A_dummy_utils_module, /* m_doc */
+    __pyx_k_A_dummy_utils_module_Used_to_che, /* m_doc */
   #if CYTHON_PEP489_MULTI_PHASE_INIT
     0, /* m_size */
   #else
@@ -1454,7 +1454,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 4, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 7, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -1692,7 +1692,7 @@ if (!__Pyx_RefNanny) {
   Py_INCREF(__pyx_m);
   #else
   #if PY_MAJOR_VERSION < 3
-  __pyx_m = Py_InitModule4("dummy_utils", __pyx_methods, __pyx_k_A_dummy_utils_module, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
+  __pyx_m = Py_InitModule4("dummy_utils", __pyx_methods, __pyx_k_A_dummy_utils_module_Used_to_che, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
   #else
   __pyx_m = PyModule_Create(&__pyx_moduledef);
   #endif
@@ -1739,9 +1739,9 @@ if (!__Pyx_RefNanny) {
   #endif
 
   /* "dummy_utils.pyx":1
- * """A dummy utils module"""             # <<<<<<<<<<<<<<
+ * """A dummy utils module.             # <<<<<<<<<<<<<<
  * 
- * cpdef urushibara_ruka(n):
+ * Used to check if pyx-pyx imports are done correctly.
  */
   __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
