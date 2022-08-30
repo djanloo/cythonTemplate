@@ -15,13 +15,15 @@ packageDir = os.path.dirname(__file__)
 includedDir = [packageDir]
 os.chdir(packageDir)
 
-ext_modules = [
-Extension("dummy_core", ["dummy_core.pyx"], include_dirs=includedDir),
-Extension("dummy_utils", ["dummy_utils.pyx"], include_dirs=includedDir)
+cython_files = [_ for _ in os.listdir(".") if _.endswith(".pyx")]
+print(f"{len(cython_files)} cython files found ({cython_files})")
+
+ext_modules = [ 
+    Extension(file.strip(".pyx"), [file], include_dirs=includedDir) for file in cython_files 
 ]
 
 setup(
-name='cythonAnimal',
+name=packageDir,
 cmdclass={'build_ext': build_ext},
 include_dirs=includedDir,
 ext_modules=ext_modules,
