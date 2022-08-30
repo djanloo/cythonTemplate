@@ -5,6 +5,7 @@ from distutils.extension import Extension
 from Cython.Distutils import build_ext
 import os
 
+old_dir = os.getcwd()
 packageDir = os.path.dirname(__file__)
 includedDir = [packageDir]
 os.chdir(packageDir)
@@ -24,3 +25,4 @@ setup(
     script_args=['build_ext'],
     options={'build_ext':{'inplace':True, 'force':True}}
 ) 
+os.chdir(old_dir)
