@@ -2,4 +2,4 @@
 Personal template for a generic cython project setup
 
 - Activate environment (``pipenv shell``)
-- Run ``./buildmod`` from main folder
+- Run ``./buildpkg`` from main folder
