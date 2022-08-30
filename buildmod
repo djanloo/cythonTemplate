@@ -1,2 +1,2 @@
 #!/bin/bash
-python dummy_module/setup.py 
+python dummy_pkg/setup.py 
