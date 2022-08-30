@@ -1,7 +1,9 @@
-from unicodedata import name
-import dummy_module
+# import pyximport; pyximport.install()
+from dummy_module import dummy_core, vanilla
 from time import perf_counter
 from rich import print
+
+vanilla.hey()
 
 class PerfContext:
 
@@ -22,8 +24,9 @@ class PerfContext:
         self.exit_time = perf_counter()
         print(f"Context {self.name} --> {self.exit_time - self.enter_time}")
 
-N = 50_000
+N = 5_000
 
 with PerfContext("global") as p:
-    p.watch(dummy_module.primes, "python", args=(2,N) )
-    p.watch(dummy_module.primes_cy, "cython", args=(2,N) )
+    p.watch(dummy_core.primes, "python", args=(2,N) )
+    p.watch(dummy_core.primes_cy, "cython", args=(2,N) )
+

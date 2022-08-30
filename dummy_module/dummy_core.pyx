@@ -1,5 +1,10 @@
 """Dummy module"""
 
+from . import dummy_utils, vanilla
+
+dummy_utils.urushibara_ruka(1)
+vanilla.hey()
+
 # Just python: uses def
 def primes(range_from: int, range_til: int):
   """ Returns the number of found prime numbers using range"""

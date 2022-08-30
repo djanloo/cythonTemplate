@@ -1,2 +1,2 @@
 #!/bin/bash
-python setup.py build_ext --inplace
+python dummy_module/setup.py 
