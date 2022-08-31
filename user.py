@@ -42,7 +42,7 @@ class PerfContext:
 
         print(f"\nContext {self.name} --> {self.exit_time - self.enter_time:.3f}")
 
-N = 150_000
+N = 25_000
 print(f"Primes searching benchmark (up to {N}):\n")
 with PerfContext("global") as p:
     p.watch(dummy_core.primes, "python", args=(2,N) )
