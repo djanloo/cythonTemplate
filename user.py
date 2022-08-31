@@ -1,5 +1,5 @@
 # import pyximport; pyximport.install()
-from dummy_pkg import setup
+# from dummy_pkg import setup
 from dummy_pkg import dummy_core, vanilla
 from time import perf_counter
 from rich import print
@@ -33,19 +33,20 @@ class PerfContext:
         for name in self.perfdict:
             colors[name] = "blue"
 
-        colors[min(self.perfdict.items())[0]] = "green"
-        colors[max(self.perfdict.items())[0]] = "red"
+        colors[min(self.perfdict, key=self.perfdict.get)] = "green"
+        colors[max(self.perfdict, key=self.perfdict.get)] = "red"
 
-        print(colors)
 
         for name in self.perfdict:
-            print(f"[{colors[name]}]{name}[/{colors[name]}] --> {self.perfdict[name]} (result: {self.resdict[name]})")
+            print(f"[{colors[name]}]{name:<15}[/{colors[name]}] --> {self.perfdict[name]:8.3f} s (result: {self.resdict[name]})")
 
-        print(f"Context {self.name} --> {self.exit_time - self.enter_time}")
+        print(f"\nContext {self.name} --> {self.exit_time - self.enter_time:.3f}")
 
-N = 5_000
-
+N = 150_000
+print(f"Primes searching benchmark (up to {N}):\n")
 with PerfContext("global") as p:
     p.watch(dummy_core.primes, "python", args=(2,N) )
     p.watch(dummy_core.primes_cy, "cython", args=(2,N) )
+    p.watch(dummy_core.primes_cy_parallel, "cython_parallel", args=(2,N) )
+
 

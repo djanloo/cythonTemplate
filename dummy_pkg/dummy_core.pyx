@@ -1,6 +1,7 @@
 """Dummy module"""
 
 from . import dummy_utils, vanilla
+from cython.parallel import prange
 
 dummy_utils.urushibara_ruka(1)
 vanilla.hey()
@@ -33,6 +34,23 @@ cpdef primes_cy(int range_from, int range_til):
       prime_count += 1
   return prime_count
 
-# this is just c: it can't be seen from outside
+# This uses the prange parallel generator
+cpdef primes_cy_parallel(int range_from, int range_til):
+  """ Returns the number of found prime numbers using prange"""
+  cdef int prime_count = 0
+  cdef int num
+  cdef int divnum
+  range_from = range_from if range_from >= 2 else 2
+  with nogil:
+    for num in prange(range_from, range_til + 1):
+      for divnum in range(2, num):
+        if ((num % divnum) == 0):
+          break
+      else:
+        prime_count += 1
+  return prime_count
+
+
+# this is just c: it can't be seen from python
 cdef does_nothing():
   pass

@@ -14,7 +14,11 @@ cython_files = [file for file in os.listdir(".") if file.endswith(".pyx")]
 print(f"{len(cython_files)} cython files found ({cython_files})")
 
 ext_modules = [ 
-    Extension(cfile.strip(".pyx"), [cfile], include_dirs=includedDir) for cfile in cython_files 
+    Extension(cfile.strip(".pyx"), [cfile], 
+                include_dirs=includedDir,
+                # Links OpenMP for parallel computing
+                extra_compile_args=['-fopenmp'],
+                extra_link_args=['-fopenmp']) for cfile in cython_files 
 ]
 
 setup(
