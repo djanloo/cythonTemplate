@@ -16,6 +16,7 @@ print(f"{len(cython_files)} cython files found ({cython_files})")
 ext_modules = [ 
     Extension(cfile.strip(".pyx"), [cfile], 
                 include_dirs=includedDir,
+                libraries=["m"],  # Unix-like specific link to C math libraries
                 # Links OpenMP for parallel computing
                 extra_compile_args=['-fopenmp'],
                 extra_link_args=['-fopenmp']) for cfile in cython_files 
