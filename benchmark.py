@@ -1,4 +1,3 @@
-from time import perf_counter
 from rich import print
 
 # This line rebuilds the cython code
