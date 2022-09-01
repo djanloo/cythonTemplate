@@ -1,6 +1,7 @@
 """A module in vanilla python"""
 from time import perf_counter
 from rich import print
+
 # Checks if cython stuff can be imported
 from . import dummy_utils, dummy_core
 
@@ -25,7 +26,7 @@ class PerfContext:
     def __enter__(self):
         self.enter_time = perf_counter()
         return self
-    
+
     def __exit__(self, *args):
         self.exit_time = perf_counter()
 
@@ -38,6 +39,8 @@ class PerfContext:
 
         print()
         for name in self.perfdict:
-            print(f"[{colors[name]}]{name:<20}[/{colors[name]}] --> {self.perfdict[name]:8.3f} s (result: {self.resdict[name]})")
+            print(
+                f"[{colors[name]}]{name:<20}[/{colors[name]}] --> {self.perfdict[name]:8.3f} s (result: {self.resdict[name]})"
+            )
 
         print(f"\nContext {self.name} --> {self.exit_time - self.enter_time:.3f}")
