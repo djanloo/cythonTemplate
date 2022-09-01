@@ -75,6 +75,7 @@ def primes_root(range_from: int, range_til: int):
       prime_count += 1
   return prime_count
 
+#5 Stops at libc.math.sqrt
 cpdef primes_cy_root(int range_from, int range_til):
   """ The same as before but with defined types and cmath"""
   cdef int prime_count = 0
@@ -89,6 +90,7 @@ cpdef primes_cy_root(int range_from, int range_til):
       prime_count += 1
   return prime_count
 
+#6 Stops at libc.math.sqrt and uses parallel generator
 cpdef primes_cy_parallel_root(int range_from, int range_til):
   """ The same as before but parallelised"""
   cdef int prime_count = 0
