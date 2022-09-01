@@ -5,7 +5,7 @@ from rich import print
 # it is more or less eqivalent to
 # >>> import pyximport; pyximport.install()
 # with the difference that pyximport sucks
-# from dummy_pkg import setup
+from dummy_pkg import setup
 
 from dummy_pkg import dummy_core
 from dummy_pkg.vanilla import PerfContext
