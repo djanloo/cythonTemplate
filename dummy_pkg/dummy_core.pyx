@@ -1,6 +1,6 @@
 """Dummy module. 
 
-Implements a primes counting algorithm by six different ways."""
+Implements a primes counting algorithm in six different ways."""
 
 # Checks for correct import
 from . import dummy_utils, vanilla
