@@ -4,4 +4,27 @@ Personal template for a generic cython project setup
 - Activate environment (``pipenv shell``)
 - Run ``./buildpkg`` or possibly (hehe) ``import setup`` in the code to rebuild the package
 
-![Screenshot from 2022-08-31 11-33-33](https://user-images.githubusercontent.com/89815653/187647708-9c2fba41-6f99-4633-a5e9-9ba7a2291c17.png)
+## Benchmark
+
+The benchmark problem is counting the number of primes up to a certain value.
+Trivial algorithm chosen:
+  - First three stop at n
+  - Last three (_r_) stop at ``sqrt(n)``
+ 
+ This allows to compare the ``sqrt`` evaluation (C vs Python).
+ 
+ Parallel computing using ``openMP`` is tested too, releasing the GIL and multithreading.
+ 
+## Results
+### O(n^2) functions
+Just for declaring types and changing from ``range`` to ``prange`` we get:
+  - Serial: **x12**
+  - Parallel: **x24**
+### O(n^3/2) functions
+Using ``libc.math``:
+  - Serial: **x900**
+  - Parallel: **x1700**
+ 
+![Screenshot from 2022-09-01 16-00-16](https://user-images.githubusercontent.com/89815653/187933094-e6dd8714-0b74-4fed-9cbb-391c61ce5aa0.png)
+
+Overall boost: **3000x**
