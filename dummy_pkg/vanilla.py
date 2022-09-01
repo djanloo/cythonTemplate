@@ -20,6 +20,7 @@ class PerfContext:
         watch_end = perf_counter()
         self.perfdict[name] = watch_end - watch_start
         self.resdict[name] = result
+        print(".", end="")
 
     def __enter__(self):
         self.enter_time = perf_counter()
@@ -35,7 +36,7 @@ class PerfContext:
         colors[min(self.perfdict, key=self.perfdict.get)] = "green"
         colors[max(self.perfdict, key=self.perfdict.get)] = "red"
 
-
+        print()
         for name in self.perfdict:
             print(f"[{colors[name]}]{name:<20}[/{colors[name]}] --> {self.perfdict[name]:8.3f} s (result: {self.resdict[name]})")
 
