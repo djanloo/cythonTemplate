@@ -28,3 +28,10 @@ Using ``libc.math``:
 ![Screenshot from 2022-09-01 16-00-16](https://user-images.githubusercontent.com/89815653/187933094-e6dd8714-0b74-4fed-9cbb-391c61ce5aa0.png)
 
 Overall boost: **3000x**
+
+## Profiling
+Run ``pyhton -m dummy_pkg.profile``.
+
+Some bugs in ``line_profiler`` for cython, some functions are not profiled.
+
+A workaround is to shift the missing funcion at the top of the code.

@@ -1,13 +1,14 @@
 from multiprocessing import dummy
-from os import chdir, path
+from os import chdir
+from os.path import dirname, join
 from line_profiler import LineProfiler
-from . import dummy_core
+from dummy_pkg import dummy_core
 
 # Sets the working directory as the one with code
 # Without this line line_profiler won't find the code
-chdir(path.dirname(__file__))
+chdir(join(dirname(__file__), "dummy_pkg"))
 
-arg = (2,1000)
+arg = (2,100)
 
 # Same argument functions comparison
 funcs = [dummy_core.primes, 
@@ -15,11 +16,9 @@ funcs = [dummy_core.primes,
         dummy_core.primes_cy_parallel, 
         dummy_core.primes_root,
         dummy_core.primes_cy_root,
-        dummy_core.primes_cy_parallel_root,
-        dummy_core.lprof_patch]
+        dummy_core.primes_cy_parallel_root]
 
 lp = LineProfiler()
-lp.add_function(dummy_core.primes_cy)
 
 for f in funcs:
     lp.add_function(f)
