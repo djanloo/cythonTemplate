@@ -6,6 +6,9 @@ generate:
 profile:
 	@python -m dummy_pkg.setup --profile
 
+notrace:
+	@python -m dummy_pkg.setup --notrace
+
 clear: 
 	@rm -f dummy_pkg/*.c
 	@rm -f dummy_pkg/*.so

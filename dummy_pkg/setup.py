@@ -8,6 +8,8 @@ from rich import print
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--profile', action='store_true')
+parser.add_argument('--notrace', action='store_true')
+args = parser.parse_args()
 
 # Set the working directory
 old_dir = os.getcwd()
@@ -22,13 +24,19 @@ extension_kwargs = dict(
         extra_link_args=["-fopenmp"],
         )
 # Profiling using line_profiler
-if parser.parse_args().profile:
+if args.profile:
     print("[blue]Compiling in profiler mode[/blue]")
     directive_defaults = get_directive_defaults()
     directive_defaults['linetrace'] = True
     directive_defaults['binding'] = True
     # Activates profiling
     extension_kwargs["define_macros"] = [('CYTHON_TRACE', '1'), ('CYTHON_TRACE_NOGIL', '1')]
+
+elif args.notrace:
+    directive_defaults = get_directive_defaults()
+    directive_defaults['linetrace'] = False
+    directive_defaults['binding'] = False
+    extension_kwargs["define_macros"] = [('CYTHON_TRACE', '0'), ('CYTHON_TRACE_NOGIL', '0')]
 
 # Finds each .pyx file and adds it as an extension
 cython_files = [file for file in os.listdir(".") if file.endswith(".pyx")]
