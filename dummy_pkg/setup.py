@@ -49,7 +49,8 @@ elif args.notrace:
 # Globally boost speed by disabling checks
 # see
 elif args.hardcore:
-    cython_compiler_directives = {"boundscheck":False,
+    cython_compiler_directives = {
+                                "boundscheck":False,
                                 "cdivision":True,
                                 "wraparound":False
                                 }
@@ -70,7 +71,7 @@ setup(
     name=packageDir,
     cmdclass={"build_ext": build_ext},
     include_dirs=includedDir,
-    ext_modules=ext_modules,
+    ext_modules=cythonize(ext_modules, compiler_directives=cython_compiler_directives),
     script_args=["build_ext"],
     options={"build_ext": {"inplace": True, "force": True}},
 )
