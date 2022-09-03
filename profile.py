@@ -1,16 +1,17 @@
-from multiprocessing import dummy
+"""Profiling examle using line_profiler.
+"""
 from os import chdir
 from os.path import dirname, join
 from line_profiler import LineProfiler
 from dummy_pkg import dummy_core
 
-# Sets the working directory as the one with code
-# Without this line line_profiler won't find the code
+# Sets the working directory as the one with the code inside
+# Without this line line_profiler won't find anything
 chdir(join(dirname(__file__), "dummy_pkg"))
 
 arg = (2,100)
 
-# Same argument functions comparison
+# Comparison between functions that accept the same args
 funcs = [dummy_core.primes, 
         dummy_core.primes_cy, 
         dummy_core.primes_cy_parallel, 
