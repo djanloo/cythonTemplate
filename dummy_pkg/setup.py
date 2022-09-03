@@ -1,14 +1,15 @@
 from setuptools import Extension, setup
 from Cython.Distutils import build_ext
 import os
+import argparse
 
 # Profiling stuff
 from Cython.Compiler.Options import get_directive_defaults
 
-directive_defaults = get_directive_defaults()
+parser = argparse.ArgumentParser()
+parser.add_argument('--profile', action='store_true')
 
-directive_defaults['linetrace'] = True
-directive_defaults['binding'] = True
+
 
 # Set the working directory
 old_dir = os.getcwd()
@@ -26,8 +27,12 @@ extension_kwargs = dict(
         extra_link_args=["-fopenmp"],
         )
 
-# Activates profiling
-extension_kwargs["define_macros"] = [('CYTHON_TRACE', '1'), ('CYTHON_TRACE_NOGIL', '1')]
+if parser.parse_args().profile:
+    directive_defaults = get_directive_defaults()
+    directive_defaults['linetrace'] = True
+    directive_defaults['binding'] = True
+    # Activates profiling
+    extension_kwargs["define_macros"] = [('CYTHON_TRACE', '1'), ('CYTHON_TRACE_NOGIL', '1')]
 
 ext_modules = [
     Extension(

@@ -2,7 +2,7 @@
 Personal template for a generic cython project setup
 
 - Activate environment (``pipenv shell``)
-- Run ``./buildpkg`` or possibly (hehe) ``import setup`` in the code to rebuild the package
+- Run ``make`` or possibly (hehe) ``import setup`` in the code to rebuild the package
 
 ## Benchmark
 
@@ -30,8 +30,14 @@ Using ``libc.math``:
 Overall boost: **3000x**
 
 ## Profiling
-Run ``pyhton -m dummy_pkg.profile``.
+Profiling slows down the code, so the compiler is not automatically set in profiler mode.
+
+When needed, rebuild the package using
+
+``make profile``
+
+An example of line profiling is given in ``profile.py``.
 
 Some bugs in ``line_profiler`` for cython, some functions are not profiled.
 
-A workaround is to shift the missing funcion at the top of the code.
+A workaround is to shift the missing funcions at the top of the code.
