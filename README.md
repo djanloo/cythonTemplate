@@ -38,6 +38,6 @@ When needed, rebuild the package using
 
 An example of line profiling is given in ``profile.py``.
 
-Some bugs in ``line_profiler`` for cython, some functions are not profiled.
+Some bugs in ``line_profiler`` for cython, not all functions are profiled.
 
-A workaround is to shift the missing funcions at the top of the code.
+A workaround is to shift the missing functions at the top of the code.
