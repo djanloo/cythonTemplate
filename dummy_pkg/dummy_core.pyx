@@ -106,6 +106,12 @@ cpdef primes_cy_parallel_root(int range_from, int range_til):
         prime_count += 1
   return prime_count
 
+cpdef lprof_patch(int range_from, int range_til):
+  """LineProfiler skips last function form profiling.
+  Use this one as an ending useless profiled function
+  """
+  a = primes_cy_parallel_root(range_from, range_til)
+  return
 
 # this is just c: it can't be seen from python
 cdef does_nothing():
