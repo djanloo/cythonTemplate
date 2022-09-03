@@ -11,6 +11,8 @@ from cython.parallel import prange
 # Fast c math
 from libc.math cimport sqrt
 
+cimport cython
+
 # Checks for correct module content
 dummy_utils.urushibara_ruka(1)
 
@@ -76,6 +78,7 @@ def primes_root(range_from: int, range_til: int):
   return prime_count
 
 #5 Stops at libc.math.sqrt
+@cython.cdivision(True)
 cpdef primes_cy_root(int range_from, int range_til):
   """ The same as before but with defined types and cmath"""
   cdef int prime_count = 0

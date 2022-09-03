@@ -9,6 +9,9 @@ profile:
 notrace:
 	@python -m dummy_pkg.setup --notrace
 
+hardcore:
+	@python -m dummy_pkg.setup --hardcore
+
 clear: 
 	@rm -f dummy_pkg/*.c
 	@rm -f dummy_pkg/*.so

@@ -3,12 +3,15 @@ import os
 import argparse
 from Cython.Distutils import build_ext
 from Cython.Compiler.Options import get_directive_defaults
+from Cython.Build import cythonize
 
 from rich import print
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--profile', action='store_true')
 parser.add_argument('--notrace', action='store_true')
+parser.add_argument('--hardcore', action='store_true')
+
 args = parser.parse_args()
 
 # Set the working directory
@@ -23,6 +26,9 @@ extension_kwargs = dict(
         extra_compile_args=["-fopenmp"],# Links OpenMP for parallel computing
         extra_link_args=["-fopenmp"],
         )
+
+cython_compiler_directives = {}
+
 # Profiling using line_profiler
 if args.profile:
     print("[blue]Compiling in profiler mode[/blue]")
@@ -32,11 +38,21 @@ if args.profile:
     # Activates profiling
     extension_kwargs["define_macros"] = [('CYTHON_TRACE', '1'), ('CYTHON_TRACE_NOGIL', '1')]
 
+# Explicitly turns off tracing
+# Use ony in case you see DCYTHON_TRACE=1 during compilation
 elif args.notrace:
     directive_defaults = get_directive_defaults()
     directive_defaults['linetrace'] = False
     directive_defaults['binding'] = False
     extension_kwargs["define_macros"] = [('CYTHON_TRACE', '0'), ('CYTHON_TRACE_NOGIL', '0')]
+
+# Globally boost speed by disabling checks
+# see
+elif args.hardcore:
+    cython_compiler_directives = {"boundscheck":False,
+                                "cdivision":True,
+                                "wraparound":False
+                                }
 
 # Finds each .pyx file and adds it as an extension
 cython_files = [file for file in os.listdir(".") if file.endswith(".pyx")]
