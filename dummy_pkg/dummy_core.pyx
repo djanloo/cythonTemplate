@@ -51,7 +51,7 @@ cpdef primes_cy_parallel(int range_from, int range_til):
   cdef int divnum
   range_from = range_from if range_from >= 2 else 2
   with nogil:
-    for num in prange(range_from, range_til + 1):
+    for num in prange(range_from, range_til + 1, num_threads=4):
       for divnum in range(2, num):
         if ((num % divnum) == 0):
           break
@@ -98,7 +98,7 @@ cpdef primes_cy_parallel_root(int range_from, int range_til):
   cdef int divnum
   range_from = range_from if range_from >= 2 else 2
   with nogil:
-    for num in prange(range_from, range_til + 1):
+    for num in prange(range_from, range_til + 1, num_threads=4):
       for divnum in range(2, <int> (sqrt(num) + 1)):
         if ((num % divnum) == 0):
           break
