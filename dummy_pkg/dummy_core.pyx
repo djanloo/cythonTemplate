@@ -1,7 +1,6 @@
 """Dummy module. 
 
 Implements a primes counting algorithm in six different ways."""
-
 # cython: cdivision=True
 
 # Checks for correct import
@@ -110,21 +109,32 @@ cpdef primes_cy_parallel_root(int range_from, int range_til):
         prime_count += 1
   return prime_count
 
-cpdef division(float x, float y):
+## Benchmark 2: compiler directives
+# Tests if compiler directives given as:
+#   - globally (compile using make hardcore)
+#   - filewise ( #cython: cdivision=True)
+#   - locally (@cython.cdivision(True))
+# correctly work
+
+cpdef division(float x, float y, long int number_of_times):
   """Tests the impact of cdivision=True"""
-  cdef int i = 0
+  cdef long int i = 0
   cdef float z
-  for i in range(1_000_000_000):
+  for i in range(number_of_times):
     z = x / y
+    x += 1.0
+    y += 2.0
   return z
 
 @cython.cdivision(True)
-cpdef cdivision(float x, float y):
+cpdef cdivision(float x, float y,long int number_of_times):
   """Tests the impact of cdivision=True"""
-  cdef int i = 0
+  cdef long int i = 0
   cdef float z
-  for i in range(1000):
+  for i in range(number_of_times):
     z = x / y
+    x += 1.0
+    y += 2.0
   return z
 
 # this is just c: it can't be seen from python

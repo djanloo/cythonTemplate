@@ -10,17 +10,18 @@ from rich import print
 from dummy_pkg import dummy_core
 from dummy_pkg.vanilla import PerfContext
 
+print()
 
-N = 1_000_000
-
-print(f"Fast division benchmark")
-
+M = 50_000_000
+print(f"Fast division benchmark (repeated {M:2.0e} times)")
 with PerfContext("division") as p:
-    p.watch(dummy_core.division, "normal", args= (200.7, 3.6))
-    p.watch(dummy_core.cdivision, "cdivision", args= (200.7, 3.6))
+    p.watch(dummy_core.division, "normal", args= (200.7, 3.6,  M ))
+    p.watch(dummy_core.cdivision, "cdivision", args= (200.7, 3.6, M   ))
 
+print()
 
-print(f"Primes searching benchmark (up to {N}):\n")
+N = 100_000
+print(f"Primes searching benchmark (up to {N:2.0e}):")
 with PerfContext("primes") as p:
     # p.watch(dummy_core.primes, "python", args=(2,N) )
     # p.watch(dummy_core.primes_cy, "cython", args=(2,N) )

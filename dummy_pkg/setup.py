@@ -31,7 +31,7 @@ cython_compiler_directives = {}
 
 # Profiling using line_profiler
 if args.profile:
-    print("[blue]Compiling in profiler mode[/blue]")
+    print("[blue]Compiling in [green]PROFILE[/green] mode[/blue]")
     directive_defaults = get_directive_defaults()
     directive_defaults['linetrace'] = True
     directive_defaults['binding'] = True
@@ -49,6 +49,7 @@ elif args.notrace:
 # Globally boost speed by disabling checks
 # see https://cython.readthedocs.io/en/latest/src/userguide/source_files_and_compilation.html#compiler-directives
 elif args.hardcore:
+    print("[blue]Compiling in [green]HARDCORE[/green] mode[/blue]")
     cython_compiler_directives = {
                                 "boundscheck":False,
                                 "cdivision":True,
