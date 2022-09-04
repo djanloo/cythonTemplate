@@ -47,7 +47,7 @@ elif args.notrace:
     extension_kwargs["define_macros"] = [('CYTHON_TRACE', '0'), ('CYTHON_TRACE_NOGIL', '0')]
 
 # Globally boost speed by disabling checks
-# see
+# see https://cython.readthedocs.io/en/latest/src/userguide/source_files_and_compilation.html#compiler-directives
 elif args.hardcore:
     cython_compiler_directives = {
                                 "boundscheck":False,

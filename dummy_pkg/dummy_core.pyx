@@ -1,7 +1,7 @@
 """Dummy module. 
 
 Implements a primes counting algorithm in six different ways."""
-# cython: boundscheck=False
+
 # cython: cdivision=True
 
 # Checks for correct import
@@ -80,7 +80,6 @@ def primes_root(range_from: int, range_til: int):
   return prime_count
 
 #5 Stops at libc.math.sqrt
-@cython.cdivision(True)
 cpdef primes_cy_root(int range_from, int range_til):
   """ The same as before but with defined types and cmath"""
   cdef int prime_count = 0
@@ -110,6 +109,23 @@ cpdef primes_cy_parallel_root(int range_from, int range_til):
       else:
         prime_count += 1
   return prime_count
+
+cpdef division(float x, float y):
+  """Tests the impact of cdivision=True"""
+  cdef int i = 0
+  cdef float z
+  for i in range(1_000_000_000):
+    z = x / y
+  return z
+
+@cython.cdivision(True)
+cpdef cdivision(float x, float y):
+  """Tests the impact of cdivision=True"""
+  cdef int i = 0
+  cdef float z
+  for i in range(1000):
+    z = x / y
+  return z
 
 # this is just c: it can't be seen from python
 cdef does_nothing():

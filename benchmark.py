@@ -12,8 +12,16 @@ from dummy_pkg.vanilla import PerfContext
 
 
 N = 1_000_000
+
+print(f"Fast division benchmark")
+
+with PerfContext("division") as p:
+    p.watch(dummy_core.division, "normal", args= (200.7, 3.6))
+    p.watch(dummy_core.cdivision, "cdivision", args= (200.7, 3.6))
+
+
 print(f"Primes searching benchmark (up to {N}):\n")
-with PerfContext("global") as p:
+with PerfContext("primes") as p:
     # p.watch(dummy_core.primes, "python", args=(2,N) )
     # p.watch(dummy_core.primes_cy, "cython", args=(2,N) )
     # p.watch(dummy_core.primes_cy_parallel, "cython_parallel", args=(2,N) )
