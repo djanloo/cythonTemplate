@@ -2,6 +2,9 @@
 
 Implements a primes counting algorithm in six different ways."""
 
+# cython: language_level=3
+
+
 # Checks for correct import
 from . import dummy_utils, vanilla
 
@@ -118,7 +121,7 @@ cpdef primes_cy_parallel_root(int range_from, int range_til):
 cpdef division(float x, float y, long int number_of_times):
   """Tests the impact of cdivision=True"""
   cdef long int i = 0
-  cdef float z
+  cdef float z = 0 
   for i in range(number_of_times):
     z = x / y
     x += 1.0
@@ -131,7 +134,7 @@ cpdef division(float x, float y, long int number_of_times):
 cpdef cdivision(float x, float y,long int number_of_times):
   """Tests the impact of cdivision=True"""
   cdef long int i = 0
-  cdef float z
+  cdef float z = 0
   for i in range(number_of_times):
     z = x / y
     x += 1.0
