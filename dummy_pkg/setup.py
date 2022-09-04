@@ -27,7 +27,7 @@ extension_kwargs = dict(
         extra_link_args=["-fopenmp"],
         )
 
-cython_compiler_directives = {}
+cython_compiler_directives = {'language_level': "3"}
 
 # Profiling using line_profiler
 if args.profile:
@@ -72,10 +72,12 @@ setup(
     name=packageDir,
     cmdclass={"build_ext": build_ext},
     include_dirs=includedDir,
-    ext_modules=cythonize(ext_modules, compiler_directives=cython_compiler_directives),
-    script_args=["build_ext"],
-    options={"build_ext": {"inplace": True, "force": True}},
-)
+    ext_modules=cythonize(  ext_modules, 
+                            compiler_directives=cython_compiler_directives,
+                            annotate=True),
+                            script_args=["build_ext"],
+                            options={"build_ext": {"inplace": True, "force": True}},
+                        )
 
 # Sets back working directory to old one
 os.chdir(old_dir)

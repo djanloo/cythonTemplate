@@ -20,6 +20,7 @@ clear:
 	@echo "Cleaning all.."
 	@rm -f dummy_pkg/*.c
 	@rm -f dummy_pkg/*.so
+	@rm -f dummy_pkg/*.html
 	@rm -R -f dummy_pkg/build
 	@rm -R -f dummy_pkg/__pycache__
 	@echo "Cleaned."
