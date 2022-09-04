@@ -11,7 +11,7 @@ from dummy_pkg import dummy_core
 from dummy_pkg.vanilla import PerfContext
 
 
-N = 5_000_000
+N = 1_000_000
 print(f"Primes searching benchmark (up to {N}):\n")
 with PerfContext("global") as p:
     # p.watch(dummy_core.primes, "python", args=(2,N) )
