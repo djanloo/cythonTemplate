@@ -1,15 +1,19 @@
 .PHONY: generate profile clear
 
 generate:
+	make clear
 	@python -m dummy_pkg.setup
 
 profile:
+	make clear
 	@python -m dummy_pkg.setup --profile
 
 notrace:
+	make clear
 	@python -m dummy_pkg.setup --notrace
 
 hardcore:
+	make clear
 	@python -m dummy_pkg.setup --hardcore
 
 clear: 

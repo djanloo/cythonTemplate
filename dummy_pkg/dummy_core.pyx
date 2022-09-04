@@ -1,7 +1,6 @@
 """Dummy module. 
 
 Implements a primes counting algorithm in six different ways."""
-# cython: cdivision=True
 
 # Checks for correct import
 from . import dummy_utils, vanilla
@@ -127,6 +126,8 @@ cpdef division(float x, float y, long int number_of_times):
   return z
 
 @cython.cdivision(True)
+@cython.wraparound(False)  # Since no memoryview is used
+@cython.boundscheck(False) # those two are useless
 cpdef cdivision(float x, float y,long int number_of_times):
   """Tests the impact of cdivision=True"""
   cdef long int i = 0
