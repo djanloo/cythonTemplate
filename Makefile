@@ -16,6 +16,10 @@ hardcore:
 	make clear
 	@python -m dummy_pkg.setup --hardcore
 
+hardcoreprofile:
+	make clear
+	@python -m dummy_pkg.setup --hardcore --profile
+
 clear:
 	@echo "Cleaning all.."
 	@rm -f dummy_pkg/*.c

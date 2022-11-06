@@ -1,6 +1,3 @@
-"""Dummy module. 
-
-Implements a primes counting algorithm in six different ways."""
 # Checks for correct import
 from . import dummy_utils, vanilla
 
@@ -13,11 +10,11 @@ from libc.math cimport sqrt
 cimport cython
 
 # Checks for correct module content
-dummy_utils.urushibara_ruka(1)
+# dummy_utils.urushibara_ruka(1)
 
 ### First three algs: check up to n
 #1 Just python: uses def
-def primes(range_from: int, range_til: int):
+cpdef primes(range_from: int, range_til: int):
   """Most trivial function: checks up to max"""
   prime_count = 0
   range_from = range_from if range_from >= 2 else 2
