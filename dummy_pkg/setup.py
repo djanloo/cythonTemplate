@@ -40,14 +40,6 @@ if args.profile:
     # Activates profiling
     extension_kwargs["define_macros"] = [('CYTHON_TRACE', '1'), ('CYTHON_TRACE_NOGIL', '1')]
 
-# Explicitly turns off tracing
-# Use ony in case you see DCYTHON_TRACE=1 during compilation
-if args.notrace:
-    cython_compiler_directives['linetrace'] = False
-    cython_compiler_directives['binding'] = False
-    # Forcefully turns off tracing
-    extension_kwargs["define_macros"] = [('CYTHON_TRACE', '0'), ('CYTHON_TRACE_NOGIL', '0')]
-
 # Globally boost speed by disabling checks
 # see https://cython.readthedocs.io/en/latest/src/userguide/source_files_and_compilation.html#compiler-directives
 if args.hardcore:
@@ -76,7 +68,7 @@ setup(
     include_dirs=includedDir,
     ext_modules=cythonize(  ext_modules, 
                             compiler_directives=cython_compiler_directives,
-                            annotate=True),
+                            annotate=False),
                             script_args=["build_ext"],
                             options={"build_ext": {"inplace": True, "force": True}},
                         )

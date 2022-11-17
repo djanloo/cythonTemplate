@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 cython = "*"
 rich = "*"
-line-profiler = "*"
+line-profiler = "==3.5.1"
 numpy = "*"
 
 [dev-packages]
