@@ -2,23 +2,23 @@
 
 generate:
 	@make clear
-	@python -m dummy_pkg.setup
+	@python3 -m dummy_pkg.setup
 
 profile:
 	@make clear
-	@python -m dummy_pkg.setup --profile
+	@python3 -m dummy_pkg.setup --profile
 
 notrace:
 	@make clear
-	@python -m dummy_pkg.setup --notrace
+	@python3 -m dummy_pkg.setup --notrace
 
 hardcore:
 	make clear
-	@python -m dummy_pkg.setup --hardcore
+	@python3 -m dummy_pkg.setup --hardcore
 
 hardcoreprofile:
 	make clear
-	@python -m dummy_pkg.setup --hardcore --profile
+	@python3 -m dummy_pkg.setup --hardcore --profile
 
 clear:
 	@echo "Cleaning all.."
