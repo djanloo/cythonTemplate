@@ -1,16 +1,16 @@
 .PHONY: generate profile clear
 
 generate:
-	@make clear
+	@echo "Warning: build is not forced"
 	@python3 -m dummy_pkg.setup
+
+force:
+	@make clear
+	@python3 -m dummy_pkg.setup --force_build
 
 profile:
 	@make clear
 	@python3 -m dummy_pkg.setup --profile
-
-notrace:
-	@make clear
-	@python3 -m dummy_pkg.setup --notrace
 
 hardcore:
 	make clear

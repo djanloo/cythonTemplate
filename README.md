@@ -44,7 +44,7 @@ A workaround is to shift the missing functions at the top of the code.
 
 ## Other compiling modes
   - ``make hardcore``: globally disables array wrapping, bound checks and enables cdivision
-  - ``make notrace``: manually disables profiling
+  - ``make force``: forces compilation of already compiled extensions. Slows down the compilation if many ``.pyx`` files are found.
 
 ![Screenshot from 2022-09-04 13-46-44](https://user-images.githubusercontent.com/89815653/188322063-4bd82d34-6767-4a0c-8ae1-5c219e839862.png)
 
