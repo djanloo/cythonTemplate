@@ -1,7 +1,7 @@
 .PHONY: generate profile clear
 
 generate:
-	@echo "Warning: build is not forced"
+	@echo "Warning: build is not forced, some binaries may not be compiled in hardcore or profile mode."
 	@python3 -m dummy_pkg.setup
 
 force:
@@ -13,11 +13,11 @@ profile:
 	@python3 -m dummy_pkg.setup --profile
 
 hardcore:
-	make clear
+	@make clear
 	@python3 -m dummy_pkg.setup --hardcore
 
 hardcoreprofile:
-	make clear
+	@make clear
 	@python3 -m dummy_pkg.setup --hardcore --profile
 
 clear:
