@@ -1,28 +1,28 @@
-.PHONY: generate profile clear
+.PHONY: generate profile clean
 
 generate:
-	@echo "Warning: build is not forced, some binaries may not be compiled in hardcore or profile mode."
 	@python3 -m dummy_pkg.setup
 
-force:
-	@make clear
-	@python3 -m dummy_pkg.setup --force_build
-
 profile:
-	@make clear
+	# @make clean
 	@python3 -m dummy_pkg.setup --profile
 
+notrace:
+	# @make clean
+	@python3 -m dummy_pkg.setup --notrace
+
 hardcore:
-	@make clear
+	# make clean
 	@python3 -m dummy_pkg.setup --hardcore
 
 hardcoreprofile:
-	@make clear
+	# make clean
 	@python3 -m dummy_pkg.setup --hardcore --profile
 
-clear:
+clean:
 	@echo "Cleaning all.."
 	@rm -f dummy_pkg/*.c
+	@rm -f dummy_pkg/*.cpp
 	@rm -f dummy_pkg/*.so
 	@rm -f dummy_pkg/*.html
 	@rm -R -f dummy_pkg/build

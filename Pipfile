@@ -8,6 +8,8 @@ cython = "*"
 rich = "*"
 line-profiler = "==3.5.1"
 numpy = "*"
+pandas = "*"
+tabulate = "*"
 
 [dev-packages]
 
